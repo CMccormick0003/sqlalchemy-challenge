@@ -1,6 +1,15 @@
 # Import the dependencies.
 
+import numpy as np
 
+import datetime as dt
+
+import sqlalchemy
+from sqlalchemy import create_engine, func
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+
+from flask import Flask, jsonify
 
 #################################################
 # Database Setup
@@ -22,8 +31,7 @@
 # Flask Setup
 #################################################
 
-
-
+app = Flask(__name__)
 
 #################################################
 # Flask Routes
