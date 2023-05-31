@@ -1,7 +1,6 @@
 # Import the dependencies.
 
 import numpy as np
-
 import datetime as dt
 
 import sqlalchemy
@@ -9,6 +8,7 @@ from sqlalchemy import create_engine, func
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 
+pip install flask
 from flask import Flask, jsonify
 
 #################################################
@@ -26,9 +26,9 @@ Base.prepare(autoload_with=engine)
 
 # Save references to each table
 Station = Base.classes.station
+Measurement = Base.classes.measurement
 
 # Create our session (link) from Python to the DB
-
 
 #################################################
 # Flask Setup
@@ -43,7 +43,7 @@ app = Flask(__name__)
 
 def main():
     return (
-        f"This is the Hawaii Climate Analysis API.  Surf's Up! <br/>"    
+        f"Use this app to check out the Climate in Hawaii.  Surf's Up! <br/>"    
         f"Available Routes: <br/>"
         f"/api/v1.0/precipitation <br/>"
         f"/api/v1.0/stations <br/>"
@@ -56,7 +56,9 @@ def main():
 # Convert query results from the precipitation analysis (i.e. retrieve only the last 12 months of data) to a dictionary using date as the key and prcp (precipitation) as the value.
 app.route("/api/v1.0/precipitation")
 
+# Create our session (link) from Python to the DB
 def precipitation():
+    session = Session(engine)
     prior_year = dt.date(2017,8,23) - dt.timedelta(days=365)
     precipitation = session.query(Measurement.date, Measurement.prcp).filter(Measurement.date >= prior_year).all()
     session.close()
@@ -65,7 +67,6 @@ def precipitation():
 
     return jsonify(precip)
  
-# session = Session(engine)
 # This ia a route definition in in Flask to create an endpoint at "/api/v1.0/stations" - this will respond to HTTP GET requests.
 app.route("/api/v1.0/stations")
 
@@ -73,5 +74,5 @@ def station():
     session = Session(engine)
     distinct_stations = session.query(Measurement.station).distinct().all()
     session.close()
-    stations =list(np.ravel(results))
+    stations = list(np.ravel(distinct_stations))
     return jsonify(stations=stations)
