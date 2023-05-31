@@ -8,7 +8,6 @@ from sqlalchemy import create_engine, func
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 
-pip install flask
 from flask import Flask, jsonify
 
 #################################################
