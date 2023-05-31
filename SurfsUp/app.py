@@ -40,7 +40,7 @@ app = Flask(__name__)
 #################################################
 @app.route("/")
 
-def main():
+def welcome():
     return (
         f"Use this app to check out the Climate in Hawaii.  Surf's Up! <br/>"    
         f"Available Routes: <br/>"
@@ -75,3 +75,6 @@ def station():
     session.close()
     stations = list(np.ravel(distinct_stations))
     return jsonify(stations=stations)
+
+if __name__ == "__main__":
+    app.run(debug=True)
