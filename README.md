@@ -100,9 +100,25 @@ Now that we have completed out initial analysis, let's design a Flask API based 
 6. Return a JSON list of stations from the dataset.
 - /api/v1.0/tobs
 7. Query the dates and temperature observations of the most-active station for the previous year of data.
-8. Return a JSON list of temperature observations for the previous year.
+- /api/v1.0/tobs_pastyear_most-activestation
+9. Return a JSON list of temperature observations for the previous year.
 - /api/v1.0/<start> and /api/v1.0/<start>/<end>
-9. Return a JSON list of the minimum temperature, the average temperature, and the maximum temperature for a specified start or start-end range.
-10. For a specified start, calculate TMIN, TAVG, and TMAX for all the dates greater than or equal to the start date.
-11. For a specified start date and end date, calculate TMIN, TAVG, and TMAX for the dates from the start date to the end date, inclusive.  Note, join the station and measurement tables for some of the queries.
-12. Use the Flask jsonify function to convert the API data to a valid JSON response object.
+10. Return a JSON list of the minimum temperature, the average temperature, and the maximum temperature for a specified start or start-end range.
+11. For a specified start, calculate TMIN, TAVG, and TMAX for all the dates greater than or equal to the start date.
+12. For a specified start date and end date, calculate TMIN, TAVG, and TMAX for the dates from the start date to the end date, inclusive.  Note, join the station and measurement tables for some of the queries.
+13. Use the Flask jsonify function to convert the API data to a valid JSON response object.
+    
+## View of the app:
+![image](https://github.com/CMccormick0003/sqlalchemy-challenge/assets/120672518/24d186b6-e744-44f2-a6ac-ceda067ad8e9)
+---------------------------
+    
+![image](https://github.com/CMccormick0003/sqlalchemy-challenge/assets/120672518/ef51b987-0198-4338-81a7-1111d1fb3a88)
+---------------------------
+    
+![image](https://github.com/CMccormick0003/sqlalchemy-challenge/assets/120672518/cb20c339-2437-4400-8ac9-3d13dd7c26f8)
+---------------------------
+    
+![image](https://github.com/CMccormick0003/sqlalchemy-challenge/assets/120672518/380baff1-4055-49f2-ab37-f3a04a5db5b7)
+---------------------------
+
+    
