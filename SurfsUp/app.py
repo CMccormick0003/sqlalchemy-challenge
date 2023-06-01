@@ -95,7 +95,11 @@ def tobs():
 # This ia a route definition in in Flask to return temperature observations from the last year from the dataset.
 
 @app.route("/api/v1.0/tobs_pastyear_most-active-station")
+
+
 def tobs_pastyear_most_activestation():
+    session = Session(engine)
+
     # Define the prior year date range
     prior_year_start = dt.date(2017, 8, 23) - dt.timedelta(days=365)
     prior_year_end = dt.date(2017, 8, 23)
