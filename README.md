@@ -109,16 +109,24 @@ Now that we have completed out initial analysis, let's design a Flask API based 
 13. Use the Flask jsonify function to convert the API data to a valid JSON response object.
     
 ## View of the app:
+---------------------------
+    ### Landing page
 ![image](https://github.com/CMccormick0003/sqlalchemy-challenge/assets/120672518/24d186b6-e744-44f2-a6ac-ceda067ad8e9)
+
 ---------------------------
-    
+### Precipitation
 ![image](https://github.com/CMccormick0003/sqlalchemy-challenge/assets/120672518/ef51b987-0198-4338-81a7-1111d1fb3a88)
----------------------------
-    
+
+---------------------------  
+### Stations
 ![image](https://github.com/CMccormick0003/sqlalchemy-challenge/assets/120672518/cb20c339-2437-4400-8ac9-3d13dd7c26f8)
----------------------------
     
+---------------------------    
+### Tenperature Observations
 ![image](https://github.com/CMccormick0003/sqlalchemy-challenge/assets/120672518/380baff1-4055-49f2-ab37-f3a04a5db5b7)
+    
 ---------------------------
+### Past Year Temperature at Most Active Station
+![image](https://github.com/CMccormick0003/sqlalchemy-challenge/assets/120672518/13090b47-7188-4f4f-8501-bd0771e31f4a)
 
     
